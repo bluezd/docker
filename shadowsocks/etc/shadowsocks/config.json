@@ -1,0 +1,9 @@
+{
+    "server":"192.157.231.21",
+    "server_port":8788,
+    "local_port":1088,
+    "password":"xiaolin",
+    "timeout":600,
+    "method":"rc4-md5",
+    "auth": true
+}
