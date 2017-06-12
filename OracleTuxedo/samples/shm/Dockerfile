@@ -1,5 +1,5 @@
 # Pull Tuxedo base image
-FROM oracle/tuxedo:12.2.2
+FROM bluezd/tuxedo:12.2.2
 
 MAINTAINER Todd Little <todd.little@oracle.com>
 COPY simpapp_runme.sh /home/oracle/
