@@ -90,5 +90,6 @@ tmboot -y
 # Shutdown the domain
 tmshutdown -y
 
+echo "Sleeping now ..."
 sleep 3600
 
