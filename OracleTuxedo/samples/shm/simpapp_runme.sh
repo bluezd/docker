@@ -85,14 +85,20 @@ buildclient -o simpcl -f simpcl.c
 buildserver -o simpserv -f simpserv.c -s TOUPPER
 # Boot up the domain
 echo "### Boot up the domain ###"
-tmboot -y > TMBOOT.log
+tmboot -y >& TMBOOT.log
 cat TMBOOT.log
 # Run the client
+echo -e "\n### Run simpcl client ###"
 ./simpcl "If you see this message, simpapp ran OK"
 # Shutdown the domain
-echo "### shutdown the domain ###"
-tmshutdown -y > TMSHUTDOWN.log
+echo -e "\n### shutdown the domain ###"
+tmshutdown -y >& TMSHUTDOWN.log
 cat TMSHUTDOWN.log
 
-echo "### Sleeping now 3600s...###"
-sleep 3600
+echo -e "\n### Sleeping for 1 hour ###"
+count=1
+while [[ $count -le 7200 ]]; do
+        echo -n "."
+        ((count++))
+        sleep 0.5
+done
