@@ -92,5 +92,12 @@ tmboot -y
 echo "### shutdown the domain ###"
 tmshutdown -y
 
-echo "### Sleeping now ...###"
+echo "### Sleeping now 10s...###"
+sleep 10
+echo "### cat stderr ###"
+cat stderr
+echo "### cat stdout ###"
+cat stdout
+
+echo "### Sleeping now 3600s...###"
 sleep 3600
