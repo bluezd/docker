@@ -85,19 +85,14 @@ buildclient -o simpcl -f simpcl.c
 buildserver -o simpserv -f simpserv.c -s TOUPPER
 # Boot up the domain
 echo "### Boot up the domain ###"
-tmboot -y
+tmboot -y > TMBOOT.log
+cat TMBOOT.log
 # Run the client
 ./simpcl "If you see this message, simpapp ran OK"
 # Shutdown the domain
 echo "### shutdown the domain ###"
-tmshutdown -y
-
-echo "### Sleeping now 10s...###"
-sleep 10
-echo "### cat stderr ###"
-cat stderr
-echo "### cat stdout ###"
-cat stdout
+tmshutdown -y > TMSHUTDOWN.log
+cat TMSHUTDOWN.log
 
 echo "### Sleeping now 3600s...###"
 sleep 3600
