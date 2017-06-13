@@ -81,15 +81,16 @@ fi
 
 # Compile the configuration file and build the client and server
 tmloadcf -y ubbsimple
-buildclient -o simpcl -f simpcl.c > /dev/null
-buildserver -o simpserv -f simpserv.c -s TOUPPER > /dev/null
+buildclient -o simpcl -f simpcl.c
+buildserver -o simpserv -f simpserv.c -s TOUPPER
 # Boot up the domain
+echo "### Boot up the domain ###"
 tmboot -y
 # Run the client
 ./simpcl "If you see this message, simpapp ran OK"
 # Shutdown the domain
+echo "### shutdown the domain ###"
 tmshutdown -y
 
-echo "Sleeping now ..."
+echo "### Sleeping now ...###"
 sleep 3600
-
